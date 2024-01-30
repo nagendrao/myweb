@@ -1,7 +1,7 @@
 pipeline{
     agent any
      tools {
-        maven 'maven-3.5.2'
+        maven 'maven-3.2.5'
     }
     
     environment{
@@ -25,17 +25,17 @@ pipeline{
                        [
                             artifactId: 'myweb', 
                             classifier: '', 
-                            file: "target/myweb-3.5.2.war", 
+                            file: "target/myweb-8.2.0.war", 
                             type: 'war'
                        ]
                   ], 
                   credentialsId: 'nexus3', 
                   groupId: 'in.javahome', 
-                  nexusUrl: '172.31.28.108:8081', 
+                  nexusUrl: '172.31.30.92:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
                   repository: 'sample-releases', 
-                  version: '3.5.2'  
+                  version: '8.2.0'  
               }
             }
         stage('Build Docker Image'){
